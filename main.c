@@ -47,7 +47,7 @@ void displayBook(struct Book *book,int count)
     }
 }
 
-void exitData(struct Book *book)
+void exitProgram(struct Book *book)
 {
     free(book);
     printf("Memory freed successfully.\n");
@@ -78,11 +78,12 @@ int main()
             displayBook(book,count);
             break;
         case 3:
-            exitData(book);
+            printf("Exiting program...\n");
             break;
         default:
-            printf("Default");
-            break;
+            printf("Invalid choice. Please try again.\n");
         }
     } while (choice != 3);
+    exitProgram(book);
+    return ;
 }
